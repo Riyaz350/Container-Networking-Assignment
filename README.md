@@ -122,7 +122,7 @@ bridge link show
 ```
 ## Result
 <img width="910" height="216" alt="image" src="https://github.com/user-attachments/assets/fa30c81a-bbb0-4754-8740-0d9b49274c8b" />
-
+<img width="908" height="170" alt="image" src="https://github.com/user-attachments/assets/0f81fa67-aa64-4c71-93a6-83f4b9477f97" />
 
 ## Check Namespaces & IPs
 
@@ -132,34 +132,43 @@ ip netns exec ns1 ip -br a
 ip netns exec ns2 ip -br a
 ip netns exec router-ns ip -br a
 ```
+## Result
+<img width="662" height="268" alt="image" src="https://github.com/user-attachments/assets/a1307f54-41bc-4f2a-b903-7a265dfdfae7" />
+
 ## Routing Tables
 ```bash
 ip netns exec ns1 ip r
 ip netns exec ns2 ip r
 ip netns exec router-ns ip r
 ```
+## Result
+<img width="574" height="175" alt="image" src="https://github.com/user-attachments/assets/eeb25b38-2951-4284-8c7a-ddd383cf66e4" />
+
 ## Forwarding Status
 ```bash
 ip netns exec router-ns sysctl net.ipv4.ip_forward
 ```
+## Result
+<img width="681" height="38" alt="image" src="https://github.com/user-attachments/assets/f5e2976b-8bc6-452e-87cf-8f9d05b49c99" />
+
 Connectivity Tests
 ## Gateway reachability
  ```bash
 ip netns exec ns1 ping -c 2 10.0.1.1
 ip netns exec ns2 ping -c 2 10.0.2.1
 ```
+## Result
+<img width="582" height="302" alt="image" src="https://github.com/user-attachments/assets/45f8e01f-0b6f-4d9d-b468-b4bbc6f66717" />
+
 
 ## End-to-end connectivity
  ```bash
 ip netns exec ns1 ping -c 3 10.0.2.2
 ip netns exec ns2 ping -c 3 10.0.1.2
 ```
+## Result
+<img width="571" height="344" alt="image" src="https://github.com/user-attachments/assets/5a956baf-eae3-4d02-b2a7-a8a601dc4795" />
 
-## Path verification
-```bash
-ip netns exec ns1 traceroute -n -m 4 10.0.2.2 || true
-ip netns exec ns1 tracepath -n 10.0.2.2 || true
-```
 ## Expected Results:
 
 Ping to gateways: 0% packet loss
