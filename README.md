@@ -120,6 +120,9 @@ ns1 sends traffic to 10.0.2.2 via 10.0.1.1, router forwards to ns2, and reply re
 ip link show type bridge
 bridge link show
 ```
+## Result
+<img width="910" height="216" alt="image" src="https://github.com/user-attachments/assets/fa30c81a-bbb0-4754-8740-0d9b49274c8b" />
+
 
 ## Check Namespaces & IPs
 
